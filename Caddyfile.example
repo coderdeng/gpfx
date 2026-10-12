@@ -1,0 +1,20 @@
+# 公网 HTTPS 反代示例（可选，但公网访问强烈建议）
+#
+# 前提：
+#   1. 有一个域名（十几块/年的即可），DNS 解析指向家里：
+#      - IPv6 直连方案 → 配 AAAA 记录（ddns-go 自动更新）
+#      - 公网 IPv4 方案 → 配 A 记录
+#   2. 路由器放行/转发 443 端口到本机（IPv6 防火墙规则或端口映射）
+#
+# 使用：
+#   brew install caddy
+#   caddy run --config Caddyfile.example          # 前台运行（先用这个调试）
+#   caddy start --config Caddyfile.example        # 后台运行
+#
+# Caddy 会自动申请并续期 Let's Encrypt 证书，之后通过
+# https://你的域名 直接访问（无需带端口号），密码与 token 全程加密传输。
+
+stock.example.com {
+	encode gzip
+	reverse_proxy 127.0.0.1:8787
+}

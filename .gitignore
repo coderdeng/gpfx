@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# 敏感配置（含 AI API Key / 注册邀请码）
+backend/.env
+
+# 运行时数据（用户持仓/流水/观察列表、账号表、AI 调用日志、行情缓存、token 密钥、日志）
+backend/data/
+
+# 构建产物
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# 编辑器 / 工具内部状态
+.zcode/

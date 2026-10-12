@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.deng.stock-analysis</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/deng/Projects/股票分析/backend/target/release/stock-analysis</string>
+    </array>
+
+    <!-- 后端以 backend/ 为工作目录：data/ 与 ../frontend/dist 均相对此处解析 -->
+    <key>WorkingDirectory</key>
+    <string>/Users/deng/Projects/股票分析/backend</string>
+
+    <!-- 登录时启动，崩溃后自动重启 -->
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/deng/Projects/股票分析/backend/data/server.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/deng/Projects/股票分析/backend/data/server.log</string>
+</dict>
+</plist>
